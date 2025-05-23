@@ -11,6 +11,11 @@ trait FactoryReflectionTrait {
 
   use AttributesHavingReflectionTrait;
 
+  #[\Override]
+  public function reveal(): \ReflectionClass|\ReflectionFunction|\ReflectionMethod {
+    return $this;
+  }
+
   /**
    * {@inheritdoc}
    */

@@ -10,6 +10,17 @@ namespace Ock\Reflection;
 interface FactoryReflectionInterface extends AttributesHavingReflectionInterface, NameHavingReflectionInterface, \Reflector {
 
   /**
+   * Reveals the native reflector.
+   *
+   * Typically this is just the object itself, which already extends one of the
+   * native reflector types.
+   *
+   * This is used when passing this to methods that require one of the native
+   * reflector types.
+   */
+  public function reveal(): \ReflectionClass|\ReflectionFunction|\ReflectionMethod;
+
+  /**
    * Gets the original class name that this method was requested for.
    *
    * This will be different from ->getDeclaringClass(), if the method is
